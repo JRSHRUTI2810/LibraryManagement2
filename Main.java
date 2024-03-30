@@ -1,7 +1,8 @@
-public class Main {
+   
+        public class Main {
     public static void main(String[] args) {
-        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "9780743273565");
-        Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", "9780061120084");
+        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "9780743273565", "Fiction");
+        Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", "9780061120084", "Fiction");
 
         Library library = new Library();
         library.addBook(book1);
@@ -21,6 +22,14 @@ public class Main {
         for (Book book : library.searchByTitle(titleToSearch)) {
             System.out.println(book.getAuthor());
         }
+
+        String categoryToSearch = "Fiction";
+        System.out.println("Books in category " + categoryToSearch + ":");
+        for (Book book : library.searchByCategory(categoryToSearch)) {
+            System.out.println("Title: " + book.getTitle() + ", Author: " + book.getAuthor() + ", ISBN: " + book.getIsbn());
+        }
     }
 }
+        
+    
 
